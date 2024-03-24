@@ -1,0 +1,37 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Aquí encontrarás todo en Mascota </h2>
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'Buscar Mascota' %}">Buscar Mascota</a>
+{% if user.is_authenticated %}
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'MascotaCrear' %}">Crear Mascota</a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h3>Lista de Mascota</h3>
+<ul>
+  {% for Mascota in object_list %}
+    
+      <h5>N°{{ Mascota.id }}:{{ Mascota.nombre }}</h5>
+      <li>Descripción: {{ Mascota.descripcion }}</li>
+      <li>Precio: {{ Mascota.precio }}</li>
+      <!-- Agrega más detalles según tu modelo de Mascota -->
+    
+    {% if user.is_authenticated %}
+
+    <a class="btn btn-outline-warning btn-sm" href="{% url 'MascotaEditar' Mascota.id %}">Editar Mascota</a>
+
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'MascotaEliminar' Mascota.id %}">Eliminar Mascota</a>
+
+    {% endif %}
+    <p>---------------------------------</p>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

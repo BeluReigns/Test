@@ -1,0 +1,37 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Aquí encontrarás todo en Libros </h2>
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'Buscar Libro' %}">Buscar Libros</a>
+{% if user.is_authenticated %}
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'LibroCrear' %}">Crear Libros</a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h3>Lista de Libros</h3>
+<ul>
+  {% for Libros in object_list %}
+    
+      <h5>N°{{ Libros.id }}:{{ Libros.nombre }}</h5>
+      <li>Autor: {{ Libros.marca }}</li>
+      <li>Precio: {{ Libros.precio }}</li>
+      <!-- Agrega más detalles según tu modelo de Libros -->
+    
+    {% if user.is_authenticated %}
+
+    <a class="btn btn-outline-warning btn-sm" href="{% url 'LibroEditar' Libros.id %}">Editar Libros</a>
+
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'LibroEliminar' Libros.id %}">Eliminar Libros</a>
+
+    {% endif %}
+    <p>---------------------------------</p>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

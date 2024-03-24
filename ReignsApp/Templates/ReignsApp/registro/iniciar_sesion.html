@@ -1,0 +1,22 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Inicia tu sesión aquí </h2>
+{% endblock %}
+
+<br></br>
+
+{% block contenido %}
+<h2 class="masthead-subheading mb-0">Iniciar Sesión</h2>
+
+<form action="" method="post"> {% csrf_token %}
+
+{{ formu }}
+
+<input type="submit" value="Iniciar Sesión">
+
+
+</form>
+{% endblock %}

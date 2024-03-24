@@ -1,0 +1,19 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Eliminando un artículo de mascota </h2>
+{% endblock %}
+
+{% block contenido %}
+
+<form action="" method="post">{% csrf_token%}
+
+<p>¿Quieres eliminar este artículo de mascota: {{object}}?</p>
+
+<input type="submit" value="Eliminar">
+
+</form>
+
+{% endblock %}

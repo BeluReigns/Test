@@ -1,0 +1,21 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Encuentra lo que buscas para tu mascota</h2>
+
+{% endblock %}
+<br>
+</br>
+{% block contenido %}
+
+<form action="/ReignsApp/resultados_mascota/" method="get">
+
+    Busca lo que quieras para tu mascota: <input type="text" name="mascota">
+
+    <input type="submit" value="buscar">
+
+</form>
+
+{% endblock %}

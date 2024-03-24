@@ -1,0 +1,98 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h4 class="masthead-subheading mb-0">Este reinado disperso, como lo dice su nombre, tiene de todo un poco ^^</h4>
+
+{% endblock %}
+
+{% block contenido %}
+
+<!-- Content section 1-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <a class="display-4" href="{% url 'RopaLeer' %}">Ropa</a>
+                    <p>Aquí podrás encontrar todo tipo de ropa, nueva o usada. Pantalones, chaquetas, poleras y mucho más.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 2-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <a class="display-4" href="{% url 'CalzadosLeer' %}">Calzado</a>
+                    <p>Aquí podrás encontrar calzado de distinto tipo, zapatillas, botines, sandalias y más.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 3-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/03.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <a class="display-4" href="{% url 'MascotaLeer' %}">Mascota</a>
+                    <p>Aquí podrás encontrar artículos para tu mascota, como bandanas, platos para la ansiedad , juguetes y otros.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 4-->
+<section>
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/02.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5">
+                    <a class="display-4" href="{% url 'LibroLeer' %}">Libros</a>
+                    <p>Aquí encontrarás libros, la mayoría usados y en inglés, pero también nuevos y en español. ¡Disfruta!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Content section 5-->
+<section id="scroll">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <div class="p-5"><img class="img-fluid rounded-circle" src="assets/img/01.jpg" alt="..." /></div>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="p-5">
+                    <a class="display-4" href="{% url 'MiscelaneoLeer' %}">Misceláneo</a>
+                    <p>Aquí encontraras una variedad de artículos, que no coinciden con las otras categorías. ¿Cómo qué? Cómo mesa de ping pong, bicicleta, artículos de cocina y más.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+<br></br>
+<br></br>
+<br></br>

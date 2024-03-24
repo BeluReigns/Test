@@ -1,0 +1,21 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Encuentra lo que buscas entre todos nuestros ropa</h2>
+
+{% endblock %}
+<br>
+</br>
+{% block contenido %}
+
+<form action="/ReignsApp/resultados_ropa/" method="get">
+
+    Ingresa el nombre del Ropa que buscas: <input type="text" name="ropa">
+
+    <input type="submit" value="buscar">
+
+</form>
+
+{% endblock %}

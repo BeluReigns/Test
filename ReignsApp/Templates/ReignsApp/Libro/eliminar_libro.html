@@ -1,0 +1,19 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Eliminando un libro </h2>
+{% endblock %}
+
+{% block contenido %}
+
+<form action="" method="post">{% csrf_token%}
+
+<p>¿Quieres eliminar el libro: {{object}}?</p>
+
+<input type="submit" value="Eliminar">
+
+</form>
+
+{% endblock %}

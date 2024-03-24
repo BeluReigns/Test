@@ -1,0 +1,18 @@
+{% extends "ReignsApp/padre.html" %} {% load static %} {% block titulo %}
+<h2 class="masthead-subheading mb-0">
+  Estos son los resultados de tu búsqueda:
+</h2>
+{% endblock %} {% block contenido %}
+<ul>
+  {% for Libros in object_list %}
+  <li>
+    <h4>N°{{ Libros.id }}:{{ Libros.nombre }}</h4>
+    <p>Autor/a: {{ Libros.autor }}</p>
+    <p>Precio: {{ Libros.precio }}</p>
+    <!-- Agrega más detalles según tu modelo de Libro -->
+  </li>
+
+  <p>---------------------------------</p>
+  {% endfor %}
+</ul>
+{% endblock %}

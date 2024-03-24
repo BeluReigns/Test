@@ -1,0 +1,39 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Aquí encontrarás todo en calzado </h2>
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'Buscar Calzado' %}">Buscar Calzado</a>
+{% if user.is_authenticated %}
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'CalzadosCrear' %}">Crear Calzado</a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h3>Lista de Calzado</h3>
+<ul>
+  {% for Calzado in object_list %}
+    
+      <h5>N°{{ Calzado.id }}:{{ Calzado.nombre }}</h5>
+      <li>Marca: {{ Calzado.marca }}</li>
+      <li>Color: {{ Calzado.color }}</li>
+      <li>Talla: {{ Calzado.talla }}</li>
+      <li>Precio: {{ Calzado.precio }}</li>
+      <!-- Agrega más detalles según tu modelo de Calzado -->
+    
+    {% if user.is_authenticated %}
+
+    <a class="btn btn-outline-warning btn-sm" href="{% url 'CalzadosEditar' Calzado.id %}">Editar Calzado</a>
+
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'CalzadosEliminar' Calzado.id %}">Eliminar Calzado</a>
+
+    {% endif %}
+    <p>---------------------------------</p>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

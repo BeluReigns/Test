@@ -1,0 +1,21 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Encuentra lo que buscas entre todos nuestros libros</h2>
+
+{% endblock %}
+<br>
+</br>
+{% block contenido %}
+
+<form action="/ReignsApp/resultados_libro/" method="get">
+
+    Ingresa el nombre del Libro que buscas: <input type="text" name="libro">
+
+    <input type="submit" value="buscar">
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h2 class="masthead-subheading mb-0">¡Crea tu avatar! </h2>
+
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Creando tu avatar</h2>
+<form action="" method="POST" enctype="multipart/form-data">{% csrf_token %} 
+
+    {{ formu }}
+    
+    <button type="submit">Crear Avatar</button>
+</form>
+
+{% endblock %}
+
+<br></br>
+<br></br>

@@ -1,0 +1,22 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Estos son los resultados de tu búsqueda:</h2>
+{% endblock %}
+
+{% block contenido %}
+<ul>
+{% for Calzado in form %}
+    
+    <h4>N°{{Calzado.id}}: {{Calzado.nombre}}</h4>
+    <li>Marca: {{Calzado.marca}}</li>
+    <li>Color: {{Calzado.color}}</li>
+    <li>Talla: {{Calzado.talla}}</li> 
+    <li>Precio: ${{Calzado.precio}}.-</li>
+    <p>---------------------------------</p>
+    
+{% endfor %}
+</ul>
+{% endblock %}

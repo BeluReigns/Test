@@ -1,0 +1,22 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+
+<h2 class="masthead-subheading mb-0">Editar usuario</h2>
+
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Editar Usuario</h2>
+<form action="" method="post">{% csrf_token %} 
+
+    {{ formu }}
+    
+<button type="submit">Editar</button>
+</form>
+
+{% endblock %}
+

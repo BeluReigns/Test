@@ -1,0 +1,39 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Aquí encontrarás todo en Misceláneo </h2>
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'Buscar Miscelaneo' %}">Buscar Misceláneo</a>
+{% if user.is_authenticated %}
+<a class="btn btn-primary btn-xl rounded-pill mt-2" href="{% url 'MiscelaneoCrear' %}">Crear Misceláneo</a>
+{% endif %}
+
+
+{% endblock %}
+
+{% block contenido %}
+<h3>Lista de Misceláneo</h3>
+<ul>
+  {% for Miscelaneo in object_list %}
+    
+      <h5>N°{{ Miscelaneo.id }}:{{ Miscelaneo.nombre }}</h5>
+      <li>Marca: {{ Miscelaneo.descripcion }}</li>
+      <li>Color: {{ Miscelaneo.color }}</li>
+      <li>Talla: {{ Miscelaneo.talla }}</li>
+      <li>Precio: {{ Miscelaneo.precio }}</li>
+      <!-- Agrega más detalles según tu modelo de Miscelaneo -->
+    
+    {% if user.is_authenticated %}
+
+    <a class="btn btn-outline-warning btn-sm" href="{% url 'MiscelaneoEditar' Miscelaneo.id %}">Editar Miscelaneo</a>
+
+    <a class="btn btn-outline-danger btn-sm" href="{% url 'MiscelaneoEliminar' Miscelaneo.id %}">Eliminar Miscelaneo</a>
+
+    {% endif %}
+    <p>---------------------------------</p>
+  {% endfor %}
+</ul>
+
+
+{% endblock %}

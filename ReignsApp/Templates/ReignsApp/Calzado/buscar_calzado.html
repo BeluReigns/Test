@@ -1,0 +1,21 @@
+{% extends "ReignsApp/padre.html" %}
+
+{% load static %}
+ 
+{% block titulo %}
+<h2 class="masthead-subheading mb-0">Encuentra lo que buscas entre todos nuestros calzados</h2>
+
+{% endblock %}
+<br>
+</br>
+{% block contenido %}
+
+<form action="/ReignsApp/resultados_calzado/" method="get">
+
+    Ingresa el nombre del Calzado que buscas: <input type="text" name="calzado">
+
+    <input type="submit" value="buscar">
+
+</form>
+
+{% endblock %}
